@@ -1,7 +1,7 @@
 #define MATE_IMPLEMENTATION
 #include "mate.h"
 
-i32 main()
+i32 main(int argc, char *argv[])
 {
     if (getenv("CCACHE_DIR") == NULL)
     {
@@ -68,8 +68,14 @@ i32 main()
             "./deps/c_std/xml/xml.c",
         };
 
+
         AddFiles(executable, cStdSources);
-        AddFile(executable, "./src/*.c");
+        printf("%d %s", argc, argv[1]);
+        if (argc > 1 && strcmp(argv[1], "--test") == 0) {
+            AddFile(executable, "./test/*.c")
+        } else {
+            AddFile(executable, "./src/*.c");
+        }
 
         LinkSystemLibraries(executable, "m", "pthread", "ssl", "crypto", "gmp", "mpfr");
 
