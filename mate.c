@@ -68,12 +68,14 @@ i32 main(int argc, char *argv[])
             "./deps/c_std/xml/xml.c",
         };
 
-
         AddFiles(executable, cStdSources);
         printf("%d %s", argc, argv[1]);
-        if (argc > 1 && strcmp(argv[1], "--test") == 0) {
+        if (argc > 1 && strcmp(argv[1], "--test") == 0)
+        {
             AddFile(executable, "./test/*.c")
-        } else {
+        }
+        else
+        {
             AddFile(executable, "./src/*.c");
         }
 
