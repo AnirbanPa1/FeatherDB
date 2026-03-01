@@ -3,6 +3,9 @@
 FeatherDB is a lightweight database project written in C.
 It provides a simple interactive shell with basic commands to insert and read rows from a file-backed table.
 
+This is being created using the guide to build a simple database for educational purpose
+"https://cstack.github.io/db_tutorial/"
+
 ## Features
 
 - File-backed table storage
